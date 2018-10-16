@@ -23,21 +23,21 @@ namespace ProceduralModeling {
 			var winv = 1f / (widthSegments - 1);
 			var hinv = 1f / (heightSegments - 1);
 
-			for(int y = 0; y < heightSegments; y++) {
+			for(int y = 0; y < heightSegments; y++) {//yを決める
 				// 行の位置の割合(0.0 ~ 1.0)
 				var ry = y * hinv;
 
-				for(int x = 0; x < widthSegments; x++) {
+				for(int x = 0; x < widthSegments; x++) {//xを決める
 					// 列の位置の割合(0.0 ~ 1.0)
 					var rx = x * winv;
 
-					vertices.Add(new Vector3(
+					vertices.Add(new Vector3(//頂点を加える
 						(rx - 0.5f) * width, 
 						0f,
 						(0.5f - ry) * height
 					));
-					uv.Add(new Vector2(rx, ry));
-					normals.Add(new Vector3(0f, 1f, 0f));
+					uv.Add(new Vector2(rx, ry));//uvを加える
+					normals.Add(new Vector3(0f, 1f, 0f));//頂点を加える
 				}
 			}
 
